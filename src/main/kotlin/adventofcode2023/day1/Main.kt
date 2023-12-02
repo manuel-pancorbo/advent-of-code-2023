@@ -18,22 +18,17 @@ private fun Line.extractCalibrationValueFromLine(): Int {
     return "$firstValue$lastValue".toInt()
 }
 
-private fun Line.reduceToDigits(): String {
-    if (this.isEmpty()) return this
-
-    if (this.first().isDigit()) return this.first() + this.substring(startIndex = 1).reduceToDigits()
-
-    // Part 2
-    return when {
-        this.startsWith("one") -> "1" + this.removePrefix("on").reduceToDigits()
-        this.startsWith("two") -> "2" + this.removePrefix("tw").reduceToDigits()
-        this.startsWith("three") -> "3" + this.removePrefix("thre").reduceToDigits()
-        this.startsWith("four") -> "4" + this.removePrefix("fou").reduceToDigits()
-        this.startsWith("five") -> "5" + this.removePrefix("fiv").reduceToDigits()
-        this.startsWith("six") -> "6" + this.removePrefix("si").reduceToDigits()
-        this.startsWith("seven") -> "7" + this.removePrefix("seve").reduceToDigits()
-        this.startsWith("eight") -> "8" + this.removePrefix("eigh").reduceToDigits()
-        this.startsWith("nine") -> "9" + this.removePrefix("nin").reduceToDigits()
-        else -> this.substring(startIndex = 1).reduceToDigits()
-    }
+private fun Line.reduceToDigits(): String = when {
+    this.isEmpty() -> this
+    this.first().isDigit() -> this.first() + this.substring(startIndex = 1).reduceToDigits()
+    this.startsWith("one") -> "1" + this.removePrefix("on").reduceToDigits()
+    this.startsWith("two") -> "2" + this.removePrefix("tw").reduceToDigits()
+    this.startsWith("three") -> "3" + this.removePrefix("thre").reduceToDigits()
+    this.startsWith("four") -> "4" + this.removePrefix("fou").reduceToDigits()
+    this.startsWith("five") -> "5" + this.removePrefix("fiv").reduceToDigits()
+    this.startsWith("six") -> "6" + this.removePrefix("si").reduceToDigits()
+    this.startsWith("seven") -> "7" + this.removePrefix("seve").reduceToDigits()
+    this.startsWith("eight") -> "8" + this.removePrefix("eigh").reduceToDigits()
+    this.startsWith("nine") -> "9" + this.removePrefix("nin").reduceToDigits()
+    else -> this.substring(startIndex = 1).reduceToDigits()
 }
