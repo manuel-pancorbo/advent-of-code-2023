@@ -1,4 +1,4 @@
-package dev.manuelpancorbo.adventofcode2023.challenges.day1
+package adventofcode2023.day1
 
 typealias Line = String
 
