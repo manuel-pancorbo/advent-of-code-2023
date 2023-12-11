@@ -1,5 +1,8 @@
-package day11
+package adventofcode2023.day11
 
+import adventofcode2023.day11.EMPTY_SPACE_DISTANCE_FACTOR
+import adventofcode2023.day11.EMPTY_SPACE_DISTANCE_FACTOR_FOR_PART_TWO
+import adventofcode2023.day11.Universe
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 

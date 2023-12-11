@@ -1,4 +1,4 @@
-package day11
+package adventofcode2023.day11
 
 import kotlin.math.abs
 
